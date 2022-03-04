@@ -1,0 +1,24 @@
+Jepsom
+Nelson
+1111 Address St.
+Oakland
+CA
+12345
+sij@gmail.com
+111-234-5678
+Jane
+Beppson
+1231 Fun St.
+Oakland
+CA
+12345
+fun@gmail.com
+323-234-5623
+Maddie
+Felix
+2 Fifth Street
+Hayward
+CA
+95010
+felix@yahoo.com
+510-234-5678
