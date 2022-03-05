@@ -24,8 +24,8 @@ public class AddressBook {
     /** a method which prints out all fields in all entries of the address book
      *
      */
-    public void list() {
-        System.out.print(this.toString());
+    public String list() {
+        return this.toString();
     }
 
     /** a method which removes an address entry from the address book

@@ -118,7 +118,7 @@ public class Menu {
      * AddressBook
      */
     public static void display_Menu() {
-        System.out.print("\n\n*************************\n"+
+        System.out.print("*************************\n"+
                 "Please enter your menu selection\n"+
                 "a) Loading From File\n"+
                 "b) Addition\n"+
