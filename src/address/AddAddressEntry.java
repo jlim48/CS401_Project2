@@ -66,11 +66,27 @@ public class AddAddressEntry extends JDialog {
         );
 
         AddressBookApplicationGUI.ab.add(ae);
+
+        resetText();
         dispose();
     }
 
     private void onCancel() {
         // add your code here if necessary
+
+        resetText();
         dispose();
     }
+    private void resetText(){
+        firstNameBox.setText("");
+        lastNameBox.setText("");
+        streetBox.setText("");
+        cityBox.setText("");
+        stateBox.setText("");
+        zipBox.setText("");
+        phoneBox.setText("");
+        emailBox.setText("");
+    }
+
 }
+

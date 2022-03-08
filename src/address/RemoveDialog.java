@@ -72,11 +72,9 @@ public class RemoveDialog extends JDialog {
                 if (e.getValueIsAdjusting() == false) {
 
                     if (entriesFoundBox.getSelectedIndex() == -1) {
-                        //No selection, disable fire button.
                         buttonOK.setEnabled(false);
 
                     } else {
-                        //Selection, enable the fire button.
                         buttonOK.setEnabled(true);
                     }
                 }
@@ -89,12 +87,14 @@ public class RemoveDialog extends JDialog {
         if (entriesFoundBox.getSelectedIndex() != -1)
             AddressBookApplicationGUI.ab.remove(entriesFound.get(entriesFoundBox.getSelectedIndex()));
         listModel.clear();
+        removeLastName.setText("");
         dispose();
     }
 
     private void onCancel() {
         // add your code here if necessary
         listModel.clear();
+        removeLastName.setText("");
         dispose();
     }
 }
