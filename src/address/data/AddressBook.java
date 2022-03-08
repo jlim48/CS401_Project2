@@ -132,25 +132,30 @@ public class AddressBook {
      * @param startOf_lastName is a string which contains either a full last name or the first consecutive chars
      * of a last name in an AddressEntry
      */
-    public void find(String startOf_lastName) {
+    public List<AddressEntry> find(String startOf_lastName) {
         SortedMap<String, TreeSet<AddressEntry>> tempMap;
         tempMap = addressEntryList.subMap(startOf_lastName, startOf_lastName + Character.MAX_VALUE);
+        List<AddressEntry> tempSet = new ArrayList<AddressEntry>();
+
         if(tempMap.size() > 0) {
             int i = 1;
             //this line computes total number of Address entries in tempMap
-            System.out.println("The following " + tempMap.values().stream().mapToInt(TreeSet::size).sum() +
+            /* System.out.println("The following " + tempMap.values().stream().mapToInt(TreeSet::size).sum() +
                     " entries were found in the address book" +
-                    " for a last name starting with " + "\"" + startOf_lastName + "\"");
+                    " for a last name starting with " + "\"" + startOf_lastName + "\""); */
             for(Map.Entry<String, TreeSet<AddressEntry>> entry : tempMap.entrySet()) {
                 for(AddressEntry item : entry.getValue()) {
-                    System.out.printf("%-3s" + item + "\n\n", i + ":");
+                    //System.out.printf("%-3s" + item + "\n\n", i + ":");
+                    tempSet.add(item);
+
                     i++;
                 }
             }
         }
-        else
-            System.out.println("There were no entries were found in the address book" +
-                    " for a last name starting with " + "\"" + startOf_lastName + "\"");
+        /* else
+             System.out.println("There were no entries were found in the address book" +
+                    " for a last name starting with " + "\"" + startOf_lastName + "\""); */
+        return tempSet;
     }
 
     /** a method that returns a set of address entries in which the first characters in the
