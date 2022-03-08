@@ -58,6 +58,7 @@ public class RemoveDialog extends JDialog {
         searchLastNameButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                listModel.clear();
                 entriesFound = AddressBookApplicationGUI.ab.find(removeLastName.getText());
                 for (AddressEntry i: entriesFound){
                     listModel.addElement(i);
@@ -86,13 +87,14 @@ public class RemoveDialog extends JDialog {
     private void onOK() {
         // add your code here
         if (entriesFoundBox.getSelectedIndex() != -1)
-            // Un-comment next line once the remove method in AddressBook takes an object instead of string
-            //AddressBookApplicationGUI.ab.remove(entriesFound.get(entriesFoundBox.getSelectedIndex()));
+            AddressBookApplicationGUI.ab.remove(entriesFound.get(entriesFoundBox.getSelectedIndex()));
+        listModel.clear();
         dispose();
     }
 
     private void onCancel() {
         // add your code here if necessary
+        listModel.clear();
         dispose();
     }
 }
