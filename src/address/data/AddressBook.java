@@ -28,6 +28,19 @@ public class AddressBook {
         return this.toString();
     }
 
+    /**
+     * Remove AddressEntry object from AddressEntry store.
+     * @param ae AddressEntry object to remove.
+     * @author Arshdeep Padda
+     */
+    public void remove (AddressEntry ae)
+    {
+        TreeSet<AddressEntry> aes = this.addressEntryList.get(ae.getLastName());
+        aes.remove(ae);
+        if (aes.size() == 0)
+            this.addressEntryList.remove(ae.getLastName());
+    }
+
     /** a method which removes an address entry from the address book
      *
      * @param lastName is the last name(or some initial consecutive chars) of the person contained

@@ -88,21 +88,38 @@ public class AddressEntry implements Comparable<AddressEntry>{
                 "\n   " + email + "\n   " + phone;
     }
 
+    /**
+     * compareTo - Compare two AddressEntry objects.
+     *
+     * Ordering: By way of the compareTo of the following
+     * fields in the specified order below:
+     *      Last name, First name, Street, City, State,
+     *      ZIP, Email, Phone.
+     *
+     * @param other Other AddressEntry object.
+     * @return Integer, NEG if this object precedes $other. ZERO if equal,
+     * and POS if this object succeeds $other.
+     */
     @Override
-    public int compareTo(AddressEntry other) {
-        if(this.lastName.compareTo(other.lastName) != 0)
+    public int compareTo(AddressEntry other)
+    {
+        if( this.lastName.compareTo(other.lastName) != 0 )
             return this.lastName.compareTo(other.lastName);
-        else if(this.firstName.compareTo(other.firstName) == 0 &&
-                this.city.compareTo(other.city) == 0 &&
-                this.phone.compareTo(other.phone) == 0 &&
-                this.state.compareTo(other.state) == 0 &&
-                this.street.compareTo(other.street) == 0 &&
-                this.email.compareTo(other.email) == 0 &&
-                this.zip.compareTo(other.zip) == 0) {
-            return 0;
-        }
-        else
-            return 1;
+        if( this.firstName.compareTo(other.firstName) != 0 )
+            return this.firstName.compareTo(other.firstName);
+        if( this.street.compareTo(other.street) != 0 )
+            return this.street.compareTo(other.street);
+        if( this.city.compareTo(other.city) != 0 )
+            return this.city.compareTo(other.city);
+        if( this.state.compareTo(other.state) != 0 )
+            return this.state.compareTo(other.state);
+        if( this.zip.compareTo(other.zip) != 0 )
+            return this.zip.compareTo(other.zip);
+        if( this.email.compareTo(other.email) != 0 )
+            return this.email.compareTo(other.email);
+        if( this.phone.compareTo(other.phone) != 0 )
+            return this.phone.compareTo(other.phone);
+        return 0;
     }
 
     /** method to set the first name of the address entry
