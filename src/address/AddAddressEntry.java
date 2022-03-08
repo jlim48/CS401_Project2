@@ -53,7 +53,24 @@ public class AddAddressEntry extends JDialog {
     }
 
     private void onOK() {
-        // add your code here
+
+        /* If any fields are blank, alert user for correction */
+        if (
+                firstNameBox.getText().isEmpty() ||
+                lastNameBox.getText().isEmpty() ||
+                streetBox.getText().isEmpty() ||
+                cityBox.getText().isEmpty() ||
+                stateBox.getText().isEmpty() ||
+                phoneBox.getText().isEmpty() ||
+                emailBox.getText().isEmpty()
+        )
+        {
+            JOptionPane.showMessageDialog(this, "Fields cannot be blank.",
+                    "Warning", JOptionPane.PLAIN_MESSAGE
+            );
+            return;
+        }
+
         AddressEntry ae = new AddressEntry(
                 firstNameBox.getText(),
                 lastNameBox.getText(),
