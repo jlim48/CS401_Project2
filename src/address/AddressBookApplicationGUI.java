@@ -28,12 +28,14 @@ public class AddressBookApplicationGUI {
         addButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                addDialog.setTitle("Adding an AddressEntry");
                 addDialog.setVisible(true);
             }
         });
         removeButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                removeDialog.setTitle("Removing an AddressEntry");
                 removeDialog.setVisible(true);
             }
         });
