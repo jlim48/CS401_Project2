@@ -40,8 +40,22 @@ public class AddressBookApplicationGUI {
     List<AddressEntry> bookEntries = new ArrayList<AddressEntry>();
     DefaultListModel listModel = new DefaultListModel();
 
+    /**
+     * AddressBookApplicationGUI class handling GUI events
+     */
     public AddressBookApplicationGUI() {
+        confirmChange.setVisible(false);
+        editOKBtn.setVisible(false);
+        cancelBtn.setVisible(false);
+
+        /**
+         * addActionListener adds an ActionListener to the displayButton
+         */
         displayButton.addActionListener(new ActionListener() {
+            /**
+             * actionPerformed binds the method to the displayButton object
+             * @param e is the ActionEvent object
+             */
             @Override
             public void actionPerformed(ActionEvent e) {
                 //displayArea.setText(ab.list());
@@ -55,14 +69,30 @@ public class AddressBookApplicationGUI {
                 entryList.setModel(listModel);
             }
         });
+
+        /**
+         * addActionListener adds an ActionListener to the displayButton
+         */
         addButton.addActionListener(new ActionListener() {
+            /**
+             * actionPerformed binds the method to the addButton object
+             * @param e is the ActionEvent object
+             */
             @Override
             public void actionPerformed(ActionEvent e) {
                 addDialog.setTitle("Adding an AddressEntry");
                 addDialog.setVisible(true);
             }
         });
+
+        /**
+         * addActionListener adds an ActionListener to the removeButton
+         */
         removeButton.addActionListener(new ActionListener() {
+            /**
+             * actionPerformed binds the method to the removeButton object
+             * @param e is the ActionEvent object
+             */
             @Override
             public void actionPerformed(ActionEvent e) {
                 removeDialog.setTitle("Removing an AddressEntry");
@@ -70,7 +100,14 @@ public class AddressBookApplicationGUI {
             }
         });
 
+        /**
+         * addListSelectionListener adds a ListSelectionListener to the entryList
+         */
         entryList.addListSelectionListener(new ListSelectionListener() {
+            /**
+             * valueChanged listens and gets the index to display
+             * @param listSelectionEvent is the listSelectionEvent object
+             */
             @Override
             public void valueChanged(ListSelectionEvent listSelectionEvent) {
                 if (!listSelectionEvent.getValueIsAdjusting()) {
@@ -90,7 +127,14 @@ public class AddressBookApplicationGUI {
             }
         });
 
+        /**
+         * addActionListen adds an ActionListener to the editOKBtn
+         */
         editOKBtn.addActionListener(new ActionListener() {
+            /**
+             * actionPerformed binds the method to the editOKBtn object
+             * @param actionEvent is an ActionEvent object
+             */
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
                 String inputText;
@@ -109,7 +153,14 @@ public class AddressBookApplicationGUI {
             }
         });
 
+        /**
+         * addFocusListener adds a FocusAdapter to the firstNameField
+         */
         firstNameField.addFocusListener(new FocusAdapter() {
+            /**
+             * focusGained listens to when the firstNameField is selected
+             * @param e is a FocusEvent
+             */
             @Override
             public void focusGained(FocusEvent e) {
                 super.focusGained(e);
@@ -119,8 +170,28 @@ public class AddressBookApplicationGUI {
                 cancelBtn.setVisible(true);
             }
         });
+
+        /**
+         * addActionListen adds an ActionListener to the cancelBtn
+         */
+        cancelBtn.addActionListener(new ActionListener() {
+            /**
+             * actionPerformed binds the method to the cancelBtn object
+             * @param actionEvent is an ActionEvent object
+             */
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                confirmChange.setVisible(false);
+                editOKBtn.setVisible(false);
+                cancelBtn.setVisible(false);
+            }
+        });
     }
 
+    /**
+     * main runs the main method of AddressBookApplication
+     * @param args is an array of String objects from the commandline
+     */
     public static void main(String[] args) {
         JFrame frame = new JFrame("AddressBookApplication");
         frame.setContentPane(new AddressBookApplicationGUI().rootPanel);
@@ -128,8 +199,6 @@ public class AddressBookApplicationGUI {
         frame.setSize(800,500);
         frame.setVisible(true);
 
-
         ab.readFromFile("entries.txt");
-
     }
 }
