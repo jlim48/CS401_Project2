@@ -1,2 +1,9 @@
-# Project exclude paths
+# ignores
+
+.DS_Store
+
+/.idea/dataSources.xml
+/.idea/dataSources/
 /out/
+
+/db_cred.txt
