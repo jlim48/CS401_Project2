@@ -13,6 +13,14 @@ import java.awt.event.FocusEvent;
 import java.util.ArrayList;
 import java.util.List;
 
+
+/**
+ * @author Bryce Schooling, Nguyen Nam Pham, Jason Lim, Arshdeep Padda
+ * @version 1.0
+ * @since 22 March 2022
+ *
+ * This GUI class is used to add data to and delete data from and query an AddressBook
+ */
 public class AddressBookApplicationGUI {
 
     static AddressBook ab = new AddressBook();
