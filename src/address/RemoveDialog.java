@@ -9,16 +9,53 @@ import java.awt.event.*;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * RemoveDialog class handles the RemoveDialog window events and removes the AddressEntry if confirmed
+ */
 public class RemoveDialog extends JDialog {
+    /**
+     * contentPane is the main content pane of this dialog window
+     */
     private JPanel contentPane;
+
+    /**
+     * buttonOK adds the AddressEntry to the AddressBook
+     */
     private JButton buttonOK;
+
+    /**
+     * buttonCancel aborts the adding process and returns to the main window
+     */
     private JButton buttonCancel;
+
+    /**
+     * removeLastName is a text field that the user inputs to find last names that match
+     */
     private JTextField removeLastName;
+
+    /**
+     * searchLastNameButton searches the last names that match the removeLastName field
+     */
     private JButton searchLastNameButton;
+
+    /**
+     * foundListPane is the pane that houses the entriesFoundBox
+     */
     private JScrollPane foundListPane;
+
+    /**
+     * entriesFoundBox list the entries that match with the removeLastName query
+     */
     private JList entriesFoundBox;
 
+    /**
+     * entriesFound is a list of AddressEntry objects that match with the removeLastName query
+     */
     List<AddressEntry> entriesFound = new ArrayList<AddressEntry>();
+
+    /**
+     * listModel adds entries before being set
+     */
     DefaultListModel listModel = new DefaultListModel();
 
 
