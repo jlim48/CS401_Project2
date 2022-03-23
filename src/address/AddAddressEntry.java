@@ -72,6 +72,7 @@ public class AddAddressEntry extends JDialog {
         }
 
         AddressEntry ae = new AddressEntry(
+                System.currentTimeMillis() / 1000,
                 firstNameBox.getText(),
                 lastNameBox.getText(),
                 streetBox.getText(),

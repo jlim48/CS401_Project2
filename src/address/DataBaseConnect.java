@@ -95,6 +95,7 @@ public class DataBaseConnect
         while (rset.next())
         {
             entries.add(new AddressEntry(
+                    Long.parseLong(rset.getString("id")),
                     rset.getString("fname"),
                     rset.getString("lname"),
                     rset.getString("street"),
@@ -164,7 +165,7 @@ public class DataBaseConnect
                 "INSERT INTO AddressBookEntry " +
                         "(id, fname, lname, street, city, state, zip, email, phone) " +
                         "VALUES (%d, '%s', '%s', '%s', '%s', '%s', %d, '%s', '%s')",
-            id, ae.getFirstName(), ae.getLastName(),
+            ae.getID(), ae.getFirstName(), ae.getLastName(),
             ae.getStreet(), ae.getCity(), ae.getState(), ae.getZip(),
             ae.getEmail(), ae.getPhone()
         );

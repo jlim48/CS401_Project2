@@ -42,6 +42,10 @@ public class AddressEntry implements Comparable<AddressEntry>{
      * email
      */
     private String email;
+    /**
+     * ID (reflective of db)
+     */
+    private long id = 0;
 
     /**returns an AddressEntry where all fields are initialized to default values
      *
@@ -79,6 +83,25 @@ public class AddressEntry implements Comparable<AddressEntry>{
         this.zip = zip;
         this.phone = phone;
         this.email = email;
+    }
+
+    /**returns an address entry initialized to the data in parameters provided
+     *
+     * @param id ID
+     * @param firstName is a firstname
+     * @param lastName is a listname
+     * @param street is a street
+     * @param city is a city
+     * @param state is a state
+     * @param zip is a zip code
+     * @param phone is a phone number
+     * @param email is an email
+     */
+    public AddressEntry(long id, String firstName, String lastName, String street,
+                        String city, String state, int zip, String email, String phone)
+    {
+        this(firstName, lastName, street, city, state, zip, email, phone);
+        this.setID(id);
     }
 
     @Override
@@ -120,6 +143,24 @@ public class AddressEntry implements Comparable<AddressEntry>{
         if( this.phone.compareTo(other.phone) != 0 )
             return this.phone.compareTo(other.phone);
         return 0;
+    }
+
+    /**
+     * Get ID.
+     */
+    public long getID ()
+    {
+        return this.id;
+    }
+
+    /**
+     * SET ID.
+     *
+     * @param id ID
+     */
+    public void setID (long id)
+    {
+        this.id = id;
     }
 
     /** method to set the first name of the address entry

@@ -1,7 +1,10 @@
 package address.data;
 
+import java.sql.SQLException;
 import java.util.*;
 import java.io.*;
+
+import address.DataBaseConnect;
 
 /**
  * @author Student Name
@@ -11,6 +14,33 @@ import java.io.*;
  * The purpose of this class is to represent a generic address book
  */
 public class AddressBook {
+
+    private DataBaseConnect db;
+
+    /**
+     * Initialize db connection.
+     */
+    public AddressBook ()
+    {
+        try {
+            this.db = new DataBaseConnect();
+            db.connect();
+        }
+        catch (ClassNotFoundException | IOException | SQLException e)
+        { e.printStackTrace(); }
+    }
+
+    /**
+     * Close connection to backend database.
+     */
+    public void Close ()
+    {
+        try {
+            this.db.disconnect();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
 
     /**
      * the data structures that will hold the data for the address book. Composed of a TreeMap
@@ -39,6 +69,15 @@ public class AddressBook {
         aes.remove(ae);
         if (aes.size() == 0)
             this.addressEntryList.remove(ae.getLastName());
+        try {
+            int r = db.delete(ae.getID());
+            System.out.print("Deleting AE with ID=");
+            System.out.println(ae.getID());
+            System.out.print("Return code=");
+            System.out.println(r);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 
     /** a method which removes an address entry from the address book
@@ -102,42 +141,26 @@ public class AddressBook {
      */
     public void add(AddressEntry entry) {
         addressEntryList.computeIfAbsent(entry.getLastName(), k -> new TreeSet<>()).add(entry);
+        try {
+            this.db.create(entry);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 
-    /** a method which reads in address entries from a text file and adds them to the address book
-     *
-     * @param filename is a string which is the name of a text file that contains address Entry data in a certain format
-     *
-     *the format is firstName\nlastName\nAdress\ncity\nState\nzip\nemail\nphoneNumber
+    public void readFromFile (String fn) {}
+
+    /**
+     * Pull entries from backend db and add to internal store.
      */
-    public void readFromFile(String filename) {
-        try{
-            //open file
-            File file = new File(filename);
-            FileReader fr = new FileReader(file);
-            BufferedReader br = new BufferedReader(fr);
-            String line;
-            //count number of entries processed
-            int count =0;
-
-            //read from filea
-            while((line=br.readLine()) != null) {
-
-                this.add(new AddressEntry(line, br.readLine(), br.readLine(), br.readLine(),
-                                          br.readLine(), Integer.parseInt(br.readLine()), br.readLine(), br.readLine()));
-
-                count++;
-            }
-            System.out.println("\nProcessed "+ count + " new Address Entries");
+    public void init_from_db ()
+    {
+        try {
+            AddressEntry[] entries = db.read();
+            for (AddressEntry entry : entries) this.add(entry);
         }
-        catch(FileNotFoundException e) {
-            //print out message for file not found
-            System.out.println(e.getMessage());
-        }
-        catch(IOException ex) {
-            //print out stack for other exceptions
-            ex.printStackTrace();
-        }
+        catch (SQLException e)
+        { e.printStackTrace(); }
     }
 
     /** a method which displays one or multiple address entries

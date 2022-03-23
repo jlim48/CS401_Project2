@@ -10,6 +10,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.FocusAdapter;
 import java.awt.event.FocusEvent;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -128,8 +130,13 @@ public class AddressBookApplicationGUI {
         frame.setSize(800,500);
         frame.setVisible(true);
 
+        ab.init_from_db();
 
-        ab.readFromFile("entries.txt");
-
+        // close db connection on app exit
+        frame.addWindowListener(new WindowAdapter() {
+            public void windowClosing(WindowEvent event) {
+                ab.Close();
+            }
+        });
     }
 }
