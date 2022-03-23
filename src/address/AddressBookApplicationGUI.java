@@ -192,22 +192,19 @@ public class AddressBookApplicationGUI {
                     if (entryList.getSelectedIndex() != -1) {
                         AddressEntry entry = bookEntries.get(entryList.getSelectedIndex());
 
-                        firstNameField.setText(entry.getFirstName());
-                        lastNameField.setText(entry.getLastName());
-                        streetField.setText(entry.getStreet());
-                        cityField.setText(entry.getCity());
-                        stateField.setText(entry.getState());
-                        zipField.setText(Integer.toString(entry.getZip()));
-                        phoneField.setText(entry.getPhone());
-                        emailField.setText(entry.getEmail());
+                        firstNameBox.setText(entry.getFirstName());
+                        lastNameBox.setText(entry.getLastName());
+                        streetBox.setText(entry.getStreet());
+                        cityBox.setText(entry.getCity());
+                        stateBox.setText(entry.getState());
+                        zipBox.setText(Integer.toString(entry.getZip()));
+                        phoneBox.setText(entry.getPhone());
+                        emailBox.setText(entry.getEmail());
                     }
                 }
             }
         });
 
-        /**
-         * addActionListen adds an ActionListener to the editOKBtn
-         */
         editOKBtn.addActionListener(new ActionListener() {
             /**
              * actionPerformed binds the method to the editOKBtn object
@@ -220,36 +217,36 @@ public class AddressBookApplicationGUI {
                 if (entryList.getSelectedIndex() != -1) {
                     AddressEntry entry = bookEntries.get(entryList.getSelectedIndex());
 
-                    if (!firstNameField.getText().equals(entry.getFirstName())) {
-                        entry.setFirstName(firstNameField.getText()); // Somewhat funky...
+                    if (!firstNameBox.getText().equals(entry.getFirstName())) {
+                        entry.setFirstName(firstNameBox.getText()); // Somewhat funky...
                     }
 
-                    if (!lastNameField.getText().equals(entry.getLastName())) {
-                        entry.setLastName(lastNameField.getText());
+                    if (!lastNameBox.getText().equals(entry.getLastName())) {
+                        entry.setLastName(lastNameBox.getText());
                     }
 
-                    if (!streetField.getText().equals(entry.getStreet())) {
-                        entry.setStreet(streetField.getText()); 
+                    if (!streetBox.getText().equals(entry.getStreet())) {
+                        entry.setStreet(streetBox.getText()); 
                     }
 
-                    if (!cityField.getText().equals(entry.getCity())) {
-                        entry.setCity(cityField.getText());
+                    if (!cityBox.getText().equals(entry.getCity())) {
+                        entry.setCity(cityBox.getText());
                     }
 
-                    if (!stateField.getText().equals(entry.getState())) {
-                        entry.setState(stateField.getText());
+                    if (!stateBox.getText().equals(entry.getState())) {
+                        entry.setState(stateBox.getText());
                     }
 
-                    if (Integer.parseInt(zipField.getText()) != entry.getZip()) {
-                        entry.setZip(Integer.parseInt(zipField.getText())); // Somewhat funky...
+                    if (Integer.parseInt(zipBox.getText()) != entry.getZip()) {
+                        entry.setZip(Integer.parseInt(zipBox.getText())); // Somewhat funky...
                     }
 
-                    if (!phoneField.getText().equals(entry.getPhone())) {
-                        entry.setPhone(phoneField.getText()); // Somewhat funky...
+                    if (!phoneBox.getText().equals(entry.getPhone())) {
+                        entry.setPhone(phoneBox.getText()); // Somewhat funky...
                     }
 
-                    if (!emailField.getText().equals(entry.getEmail())) {
-                        entry.setEmail(emailField.getText()); // Somewhat funky...
+                    if (!emailBox.getText().equals(entry.getEmail())) {
+                        entry.setEmail(emailBox.getText()); // Somewhat funky...
                     }
 
                     confirmChange.setVisible(false);
@@ -259,12 +256,9 @@ public class AddressBookApplicationGUI {
             }
         });
 
-        /**
-         * addFocusListener adds a FocusAdapter to the firstNameField
-         */
-        firstNameField.addFocusListener(new FocusAdapter() {
+        firstNameBox.addFocusListener(new FocusAdapter() {
             /**
-             * focusGained listens to when the firstNameField is selected
+             * focusGained listens to when the firstNameBox is selected
              * @param e is a FocusEvent
              */
             @Override
@@ -277,12 +271,9 @@ public class AddressBookApplicationGUI {
             }
         });
 
-        /**
-         * addFocusListener adds a FocusAdapter to the lastNameField
-         */
-        lastNameField.addFocusListener(new FocusAdapter() {
+        lastNameBox.addFocusListener(new FocusAdapter() {
             /**
-             * focusGained listens to when the lastNameField is selected
+             * focusGained listens to when the lastNameBox is selected
              * @param e is a FocusEvent
              */
             @Override
@@ -295,12 +286,9 @@ public class AddressBookApplicationGUI {
             }
         });
 
-        /**
-         * addFocusListener adds a FocusAdapter to the streetField
-         */
-        streetField.addFocusListener(new FocusAdapter() {
+        streetBox.addFocusListener(new FocusAdapter() {
             /**
-             * focusGained listens to when the streetField is selected
+             * focusGained listens to when the streetBox is selected
              * @param e is a FocusEvent
              */
             @Override
@@ -313,12 +301,9 @@ public class AddressBookApplicationGUI {
             }
         });
 
-        /**
-         * addFocusListener adds a FocusAdapter to the cityField
-         */
-        cityField.addFocusListener(new FocusAdapter() {
+        cityBox.addFocusListener(new FocusAdapter() {
             /**
-             * focusGained listens to when the cityField is selected
+             * focusGained listens to when the cityBox is selected
              * @param e is a FocusEvent
              */
             @Override
@@ -331,12 +316,9 @@ public class AddressBookApplicationGUI {
             }
         });
 
-        /**
-         * addFocusListener adds a FocusAdapter to the stateField
-         */
-        stateField.addFocusListener(new FocusAdapter() {
+        stateBox.addFocusListener(new FocusAdapter() {
             /**
-             * focusGained listens to when the stateField is selected
+             * focusGained listens to when the stateBox is selected
              * @param e is a FocusEvent
              */
             @Override
@@ -349,12 +331,9 @@ public class AddressBookApplicationGUI {
             }
         });
 
-        /**
-         * addFocusListener adds a FocusAdapter to the zipField
-         */
-        zipField.addFocusListener(new FocusAdapter() {
+        zipBox.addFocusListener(new FocusAdapter() {
             /**
-             * focusGained listens to when the zipField is selected
+             * focusGained listens to when the zipBox is selected
              * @param e is a FocusEvent
              */
             @Override
@@ -367,12 +346,9 @@ public class AddressBookApplicationGUI {
             }
         });
 
-        /**
-         * addFocusListener adds a FocusAdapter to the phoneField
-         */
-        phoneField.addFocusListener(new FocusAdapter() {
+        phoneBox.addFocusListener(new FocusAdapter() {
             /**
-             * focusGained listens to when the phoneField is selected
+             * focusGained listens to when the phoneBox is selected
              * @param e is a FocusEvent
              */
             @Override
@@ -385,12 +361,9 @@ public class AddressBookApplicationGUI {
             }
         });
 
-        /**
-         * addFocusListener adds a FocusAdapter to the emailField
-         */
-        emailField.addFocusListener(new FocusAdapter() {
+        emailBox.addFocusListener(new FocusAdapter() {
             /**
-             * focusGained listens to when the emailField is selected
+             * focusGained listens to when the emailBox is selected
              * @param e is a FocusEvent
              */
             @Override
@@ -403,9 +376,6 @@ public class AddressBookApplicationGUI {
             }
         });
 
-        /**
-         * addActionListen adds an ActionListener to the cancelBtn
-         */
         cancelBtn.addActionListener(new ActionListener() {
             /**
              * actionPerformed binds the method to the cancelBtn object
