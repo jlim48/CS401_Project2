@@ -156,6 +156,34 @@ public class AddressBookApplicationGUI {
                         entry.setFirstName(firstNameField.getText()); // Somewhat funky...
                     }
 
+                    if (!lastNameField.getText().equals(entry.getLastName())) {
+                        entry.setLastName(lastNameField.getText());
+                    }
+
+                    if (!streetField.getText().equals(entry.getStreet())) {
+                        entry.setStreet(streetField.getText()); 
+                    }
+
+                    if (!cityField.getText().equals(entry.getCity())) {
+                        entry.setCity(cityField.getText());
+                    }
+
+                    if (!stateField.getText().equals(entry.getState())) {
+                        entry.setState(stateField.getText());
+                    }
+
+                    if (Integer.parseInt(zipField.getText()) != entry.getZip()) {
+                        entry.setZip(Integer.parseInt(zipField.getText())); // Somewhat funky...
+                    }
+
+                    if (!phoneField.getText().equals(entry.getPhone())) {
+                        entry.setPhone(phoneField.getText()); // Somewhat funky...
+                    }
+
+                    if (!emailField.getText().equals(entry.getEmail())) {
+                        entry.setEmail(emailField.getText()); // Somewhat funky...
+                    }
+
                     confirmChange.setVisible(false);
                     editOKBtn.setVisible(false);
                     cancelBtn.setVisible(false);
@@ -169,6 +197,132 @@ public class AddressBookApplicationGUI {
         firstNameField.addFocusListener(new FocusAdapter() {
             /**
              * focusGained listens to when the firstNameField is selected
+             * @param e is a FocusEvent
+             */
+            @Override
+            public void focusGained(FocusEvent e) {
+                super.focusGained(e);
+
+                confirmChange.setVisible(true);
+                editOKBtn.setVisible(true);
+                cancelBtn.setVisible(true);
+            }
+        });
+
+        /**
+         * addFocusListener adds a FocusAdapter to the lastNameField
+         */
+        lastNameField.addFocusListener(new FocusAdapter() {
+            /**
+             * focusGained listens to when the lastNameField is selected
+             * @param e is a FocusEvent
+             */
+            @Override
+            public void focusGained(FocusEvent e) {
+                super.focusGained(e);
+
+                confirmChange.setVisible(true);
+                editOKBtn.setVisible(true);
+                cancelBtn.setVisible(true);
+            }
+        });
+
+        /**
+         * addFocusListener adds a FocusAdapter to the streetField
+         */
+        streetField.addFocusListener(new FocusAdapter() {
+            /**
+             * focusGained listens to when the streetField is selected
+             * @param e is a FocusEvent
+             */
+            @Override
+            public void focusGained(FocusEvent e) {
+                super.focusGained(e);
+
+                confirmChange.setVisible(true);
+                editOKBtn.setVisible(true);
+                cancelBtn.setVisible(true);
+            }
+        });
+
+        /**
+         * addFocusListener adds a FocusAdapter to the cityField
+         */
+        cityField.addFocusListener(new FocusAdapter() {
+            /**
+             * focusGained listens to when the cityField is selected
+             * @param e is a FocusEvent
+             */
+            @Override
+            public void focusGained(FocusEvent e) {
+                super.focusGained(e);
+
+                confirmChange.setVisible(true);
+                editOKBtn.setVisible(true);
+                cancelBtn.setVisible(true);
+            }
+        });
+
+        /**
+         * addFocusListener adds a FocusAdapter to the stateField
+         */
+        stateField.addFocusListener(new FocusAdapter() {
+            /**
+             * focusGained listens to when the stateField is selected
+             * @param e is a FocusEvent
+             */
+            @Override
+            public void focusGained(FocusEvent e) {
+                super.focusGained(e);
+
+                confirmChange.setVisible(true);
+                editOKBtn.setVisible(true);
+                cancelBtn.setVisible(true);
+            }
+        });
+
+        /**
+         * addFocusListener adds a FocusAdapter to the zipField
+         */
+        zipField.addFocusListener(new FocusAdapter() {
+            /**
+             * focusGained listens to when the zipField is selected
+             * @param e is a FocusEvent
+             */
+            @Override
+            public void focusGained(FocusEvent e) {
+                super.focusGained(e);
+
+                confirmChange.setVisible(true);
+                editOKBtn.setVisible(true);
+                cancelBtn.setVisible(true);
+            }
+        });
+
+        /**
+         * addFocusListener adds a FocusAdapter to the phoneField
+         */
+        phoneField.addFocusListener(new FocusAdapter() {
+            /**
+             * focusGained listens to when the phoneField is selected
+             * @param e is a FocusEvent
+             */
+            @Override
+            public void focusGained(FocusEvent e) {
+                super.focusGained(e);
+
+                confirmChange.setVisible(true);
+                editOKBtn.setVisible(true);
+                cancelBtn.setVisible(true);
+            }
+        });
+
+        /**
+         * addFocusListener adds a FocusAdapter to the emailField
+         */
+        emailField.addFocusListener(new FocusAdapter() {
+            /**
+             * focusGained listens to when the emailField is selected
              * @param e is a FocusEvent
              */
             @Override
