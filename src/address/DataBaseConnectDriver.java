@@ -6,8 +6,19 @@ import address.data.AddressEntry;
 import java.io.IOException;
 import java.sql.SQLException;
 
+/**
+ * DataBaseConnectDriver class manages the database
+ */
 public class DataBaseConnectDriver
 {
+    /**
+     * main is the main method of DataBaseConnectDriver class
+     * @param args is an array of Strings
+     * @throws SQLException when it has database errors
+     * @throws ClassNotFoundException when a class cannot be found
+     * @throws IOException when I/O errors occurred
+     * @throws RuntimeException occurred when the driver encountered errors while running
+     */
     public static void main (String[] args) throws SQLException, ClassNotFoundException, IOException, RuntimeException
     {
         // Empty handle on db. No connection made yet.
