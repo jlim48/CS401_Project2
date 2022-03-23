@@ -15,6 +15,9 @@ import address.DataBaseConnect;
  */
 public class AddressBook {
 
+    /**
+     * db is a DataBaseConnect object
+     */
     private DataBaseConnect db;
 
     /**
@@ -51,8 +54,9 @@ public class AddressBook {
      */
     private final TreeMap<String, TreeSet<AddressEntry>> addressEntryList = new TreeMap<>();
 
-    /** a method which prints out all fields in all entries of the address book
-     *
+    /**
+     * A method which prints out all fields in all entries of the address book
+     * @return The output String of this object
      */
     public String list() {
         return this.toString();
@@ -132,8 +136,8 @@ public class AddressBook {
         }
     }
 
-    /** a method which adds an address entry to the address book
-     *
+    /**
+     * A method which adds an address entry to the address book
      * @param entry is an instance of AddressEntry to add to the AddressBook
      *
      * If the key has never been seen before then a new TreeSet is created to contain the entry.
@@ -148,6 +152,10 @@ public class AddressBook {
         }
     }
 
+    /**
+     * readFromFile is an empty method
+     * @param fn The String filename as fn
+     */
     public void readFromFile (String fn) {}
 
     /**
@@ -163,10 +171,11 @@ public class AddressBook {
         { e.printStackTrace(); }
     }
 
-    /** a method which displays one or multiple address entries
-     *
+    /**
+     * A method which displays one or multiple address entries
      * @param startOf_lastName is a string which contains either a full last name or the first consecutive chars
      * of a last name in an AddressEntry
+     * @return The set of AddressEntry objects found by this method
      */
     public List<AddressEntry> find(String startOf_lastName) {
         SortedMap<String, TreeSet<AddressEntry>> tempMap;

@@ -146,7 +146,8 @@ public class AddressEntry implements Comparable<AddressEntry>{
     }
 
     /**
-     * Get ID.
+     * Get ID
+     * @return The ID of this AddressEntry object
      */
     public long getID ()
     {
