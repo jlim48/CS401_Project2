@@ -5,17 +5,63 @@ import address.data.AddressEntry;
 import javax.swing.*;
 import java.awt.event.*;
 
+/**
+ * The AddAddressEntry class handles the AddAddressEntry window and adds an AddressEntry to AddressBook if confirmed
+ */
 public class AddAddressEntry extends JDialog {
+    /**
+     * The main contentPane of this dialog window
+     */
     private JPanel contentPane;
+
+    /**
+     * buttonOk proceeds to add the AddressEntry to the AddressBook
+     */
     private JButton buttonOK;
+
+    /**
+     * buttonCancel aborts the adding process
+     */
     private JButton buttonCancel;
+
+    /**
+     * firstNameBox is a text field that display the first name
+     */
     private JTextField firstNameBox;
+
+    /**
+     * lastNameBox is a text field that display the last name
+     */
     private JTextField lastNameBox;
+
+    /**
+     * streetBox is a text field that display the street
+     */
     private JTextField streetBox;
+
+    /**
+     * stateBox is a text field that display the state
+     */
     private JTextField stateBox;
+
+    /**
+     * zipBox is a text field that display the Zip Code
+     */
     private JTextField zipBox;
+
+    /**
+     * phoneBox is a text field that display the phone number
+     */
     private JTextField phoneBox;
+
+    /**
+     * emailBox is a text field that display the email address
+     */
     private JTextField emailBox;
+
+    /**
+     * cityBox is a text field that display the city
+     */
     private JTextField cityBox;
 
     /**
@@ -27,9 +73,6 @@ public class AddAddressEntry extends JDialog {
         getRootPane().setDefaultButton(buttonOK);
         this.setSize(500, 600);
 
-        /**
-         * addActionListener adds an ActionListener to the buttonOK object
-         */
         buttonOK.addActionListener(new ActionListener() {
             /**
              * actionPerformed binds itself to buttonOK
@@ -40,9 +83,6 @@ public class AddAddressEntry extends JDialog {
             }
         });
 
-        /**
-         * addActionListener adds an ActionListener to the buttonCancel object
-         */
         buttonCancel.addActionListener(new ActionListener() {
             /**
              * actionPerformed binds itself to buttonCancel
@@ -56,8 +96,8 @@ public class AddAddressEntry extends JDialog {
         // call onCancel() when cross is clicked
         setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
 
-        /**
-         * addWindowListener adds a casted WindowAdapter to the AddAddressEntry window
+        /*
+         * addWindowListener adds a cast WindowAdapter to the AddAddressEntry window
          */
         addWindowListener(new WindowAdapter() {
             public void windowClosing(WindowEvent e) {
@@ -65,9 +105,6 @@ public class AddAddressEntry extends JDialog {
             }
         });
 
-        /**
-         * registerKeyboardAction calls onCancel() when ESCAPE is pressed
-         */
         contentPane.registerKeyboardAction(new ActionListener() {
             /**
              * actionPerformed binds itself to the contentPane object
