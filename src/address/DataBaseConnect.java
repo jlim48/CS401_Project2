@@ -28,6 +28,7 @@ public class DataBaseConnect
     /**
      * Establish connection to DB.
      *
+     * @throws SQLException If the database has errors
      * @throws IOException If file not found or inaccessible.
      * @throws RuntimeException CredFileInvalidFormat if format invalid.
      * @throws RuntimeException Message: "CredFileInvalidFormat" if format invalid.
@@ -70,6 +71,7 @@ public class DataBaseConnect
 
     /**
      * Disconnect connection to DB.
+     * @throws SQLException when it has database errors
      */
     public void disconnect () throws SQLException
     {
