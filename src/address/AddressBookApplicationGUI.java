@@ -25,42 +25,119 @@ import java.util.List;
  */
 public class AddressBookApplicationGUI {
 
+    /**
+     * ab is an AddressBook in the AddressBookApplicationGUI
+     */
     static AddressBook ab = new AddressBook();
+
+    /**
+     * addDialog is an AddAddressEntry object
+     */
     static AddAddressEntry addDialog = new AddAddressEntry();
+
+    /**
+     * removeDialog is a RemoveDialog object
+     */
     static RemoveDialog removeDialog = new RemoveDialog();
-;
+
+    /**
+     * rootPanel is the root or main panel of this window
+     */
     private JPanel rootPanel;
+
+    /**
+     * displayButton displays the list of AddressEntry objects
+     */
     private JButton displayButton;
-    private JTextArea displayArea;
+
+    /**
+     * addButton brings up the AddAddressEntry dialog window
+     */
     private JButton addButton;
+
+    /**
+     * removeButton brings up the RemoveDialog window
+     */
     private JButton removeButton;
-    private JTextField firstNameField;
-    private JTextField lastNameField;
-    private JTextField streetField;
-    private JTextField cityField;
-    private JTextField stateField;
-    private JTextField zipField;
-    private JTextField phoneField;
-    private JTextField emailField;
+
+    /**
+     * firstNameBox is a text field that display the first name
+     */
+    private JTextField firstNameBox;
+
+    /**
+     * lastNameBox is a text field that display the last name
+     */
+    private JTextField lastNameBox;
+
+    /**
+     * streetBox is a text field that display the street
+     */
+    private JTextField streetBox;
+
+    /**
+     * stateBox is a text field that display the state
+     */
+    private JTextField stateBox;
+
+    /**
+     * zipBox is a text field that display the Zip Code
+     */
+    private JTextField zipBox;
+
+    /**
+     * phoneBox is a text field that display the phone number
+     */
+    private JTextField phoneBox;
+
+    /**
+     * emailBox is a text field that display the email address
+     */
+    private JTextField emailBox;
+
+    /**
+     * cityBox is a text field that display the city
+     */
+    private JTextField cityBox;
+
+    /**
+     * entryList stores the AddressEntry objects as a JList
+     */
     private JList entryList;
+
+    /**
+     * editOKBtn confirms the changes to the text fields in an AddressEntry
+     */
     private JButton editOKBtn;
+
+    /**
+     * cancelBtn cancels the changes to an AddressEntry
+     */
     private JButton cancelBtn;
+
+    /**
+     * confirmChange is a JLabel that is visible when a text field is focused
+     */
     private JLabel confirmChange;
 
+    /**
+     * bookEntries is a list of AddressEntry objects
+     */
     List<AddressEntry> bookEntries = new ArrayList<AddressEntry>();
+
+    /**
+     * listModel is the way to add elements before setting the listModel
+     */
     DefaultListModel listModel = new DefaultListModel();
 
     /**
-     * AddressBookApplicationGUI class handling GUI events
+     * AddressBookApplicationGUI class handles GUI events
      */
     public AddressBookApplicationGUI() {
         confirmChange.setVisible(false);
         editOKBtn.setVisible(false);
         cancelBtn.setVisible(false);
 
-        /**
-         * addActionListener adds an ActionListener to the displayButton
-         */
         displayButton.addActionListener(new ActionListener() {
             /**
              * actionPerformed binds the method to the displayButton object
@@ -80,9 +157,6 @@ public class AddressBookApplicationGUI {
             }
         });
 
-        /**
-         * addActionListener adds an ActionListener to the displayButton
-         */
         addButton.addActionListener(new ActionListener() {
             /**
              * actionPerformed binds the method to the addButton object
@@ -95,9 +169,6 @@ public class AddressBookApplicationGUI {
             }
         });
 
-        /**
-         * addActionListener adds an ActionListener to the removeButton
-         */
         removeButton.addActionListener(new ActionListener() {
             /**
              * actionPerformed binds the method to the removeButton object
@@ -110,9 +181,6 @@ public class AddressBookApplicationGUI {
             }
         });
 
-        /**
-         * addListSelectionListener adds a ListSelectionListener to the entryList
-         */
         entryList.addListSelectionListener(new ListSelectionListener() {
             /**
              * valueChanged listens and gets the index to display
