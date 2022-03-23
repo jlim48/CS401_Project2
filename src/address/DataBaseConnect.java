@@ -43,6 +43,29 @@ public class DataBaseConnect
                         "@adcsdb01.csueastbay.edu:1521/" +
                         "mcspdb.ad.csueastbay.edu"
         );
+
+        // Attempt to create table
+        try
+        {
+            String query = "create table ADDRESSBOOKENTRY (" +
+                    "ID NUMBER(10)," +
+                    "FNAME VARCHAR2(30) not null," +
+                    "LNAME VARCHAR2(30) not null," +
+                    "STREET VARCHAR2(30) not null," +
+                    "CITY VARCHAR2(30) not null," +
+                    "STATE VARCHAR2(30) not null," +
+                    "ZIP NUMBER not null," +
+                    "EMAIL VARCHAR2(50) not null," +
+                    "PHONE VARCHAR2(20) not null)";
+            Statement stmt = this.conn.createStatement();
+            Boolean ret = stmt.execute(query);
+            stmt.close();
+        }
+        catch (SQLException e)
+        {
+            if (!e.getSQLState().equals("955"))
+                throw e;
+        }
     }
 
     /**
