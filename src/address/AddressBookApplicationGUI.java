@@ -265,9 +265,11 @@ public class AddressBookApplicationGUI {
             public void focusGained(FocusEvent e) {
                 super.focusGained(e);
 
-                confirmChange.setVisible(true);
-                editOKBtn.setVisible(true);
-                cancelBtn.setVisible(true);
+                if (entryList.getSelectedIndex() != -1) {
+                    confirmChange.setVisible(true);
+                    editOKBtn.setVisible(true);
+                    cancelBtn.setVisible(true);
+                }
             }
         });
 
@@ -280,9 +282,11 @@ public class AddressBookApplicationGUI {
             public void focusGained(FocusEvent e) {
                 super.focusGained(e);
 
-                confirmChange.setVisible(true);
-                editOKBtn.setVisible(true);
-                cancelBtn.setVisible(true);
+                if (entryList.getSelectedIndex() != -1) {
+                    confirmChange.setVisible(true);
+                    editOKBtn.setVisible(true);
+                    cancelBtn.setVisible(true);
+                }
             }
         });
 
@@ -295,9 +299,11 @@ public class AddressBookApplicationGUI {
             public void focusGained(FocusEvent e) {
                 super.focusGained(e);
 
-                confirmChange.setVisible(true);
-                editOKBtn.setVisible(true);
-                cancelBtn.setVisible(true);
+                if (entryList.getSelectedIndex() != -1) {
+                    confirmChange.setVisible(true);
+                    editOKBtn.setVisible(true);
+                    cancelBtn.setVisible(true);
+                }
             }
         });
 
@@ -310,9 +316,11 @@ public class AddressBookApplicationGUI {
             public void focusGained(FocusEvent e) {
                 super.focusGained(e);
 
-                confirmChange.setVisible(true);
-                editOKBtn.setVisible(true);
-                cancelBtn.setVisible(true);
+                if (entryList.getSelectedIndex() != -1) {
+                    confirmChange.setVisible(true);
+                    editOKBtn.setVisible(true);
+                    cancelBtn.setVisible(true);
+                }
             }
         });
 
@@ -325,9 +333,11 @@ public class AddressBookApplicationGUI {
             public void focusGained(FocusEvent e) {
                 super.focusGained(e);
 
-                confirmChange.setVisible(true);
-                editOKBtn.setVisible(true);
-                cancelBtn.setVisible(true);
+                if (entryList.getSelectedIndex() != -1) {
+                    confirmChange.setVisible(true);
+                    editOKBtn.setVisible(true);
+                    cancelBtn.setVisible(true);
+                }
             }
         });
 
@@ -340,9 +350,11 @@ public class AddressBookApplicationGUI {
             public void focusGained(FocusEvent e) {
                 super.focusGained(e);
 
-                confirmChange.setVisible(true);
-                editOKBtn.setVisible(true);
-                cancelBtn.setVisible(true);
+                if (entryList.getSelectedIndex() != -1) {
+                    confirmChange.setVisible(true);
+                    editOKBtn.setVisible(true);
+                    cancelBtn.setVisible(true);
+                }
             }
         });
 
@@ -355,9 +367,11 @@ public class AddressBookApplicationGUI {
             public void focusGained(FocusEvent e) {
                 super.focusGained(e);
 
-                confirmChange.setVisible(true);
-                editOKBtn.setVisible(true);
-                cancelBtn.setVisible(true);
+                if (entryList.getSelectedIndex() != -1) {
+                    confirmChange.setVisible(true);
+                    editOKBtn.setVisible(true);
+                    cancelBtn.setVisible(true);
+                }
             }
         });
 
@@ -370,9 +384,11 @@ public class AddressBookApplicationGUI {
             public void focusGained(FocusEvent e) {
                 super.focusGained(e);
 
-                confirmChange.setVisible(true);
-                editOKBtn.setVisible(true);
-                cancelBtn.setVisible(true);
+                if (entryList.getSelectedIndex() != -1) {
+                    confirmChange.setVisible(true);
+                    editOKBtn.setVisible(true);
+                    cancelBtn.setVisible(true);
+                }
             }
         });
 
